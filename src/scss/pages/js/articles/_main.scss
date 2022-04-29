@@ -1,0 +1,273 @@
+#main {
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    article {
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) .img {
+          background: url("./assets/images/bg_#{$i}.jpg") no-repeat 0 0 / cover;
+        }
+      }
+
+      position: relative;
+      width: 70vw;
+      max-width: 1000px;
+      margin-top: 30vw;
+      padding-top: 10vw;
+      text-align: right;
+      &:last-child {
+        margin-bottom: 30vw;
+      }
+      .num {
+        position: absolute;
+        top: -5vw;
+        right: -5vw;
+        color: rgb(255 255 255 / 7%);
+        font-weight: 100;
+        font-size: 18vw;
+        font-family: "Lato", sans-serif;
+      }
+      .title {
+        padding-bottom: 1vw;
+        font-weight: 700;
+        font-size: 2vw;
+      }
+      .img-wrap {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        .img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          filter: saturate(0%);
+          transition: filter 1s;
+          &:hover {
+            filter: saturate(100%);
+          }
+          &.scale-20 {
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+          }
+        }
+      }
+      .desc-wrap {
+        overflow: hidden;
+        margin: -6vw -3vw 0 0;
+        font-size: 4vw;
+        line-height: 1.4;
+        word-break: keep-all;
+      }
+      &:nth-child(even) {
+        margin-left: auto;
+        text-align: left;
+        .num {
+          right: auto;
+          left: -5vw;
+        }
+        .desc-wrap {
+          margin: -6vw 0 0 -3vw;
+        }
+      }
+      .reveal {
+        position: relative;
+        > * {
+          opacity: 0;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background-color: #fff;
+          z-index: 10;
+        }
+        &.reveal-second {
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: orange;
+            z-index: 10;
+          }
+        }
+        &.show {
+          $desc-delay: 0.5s;
+          $reveal-second-delay: 0.3s;
+          &::before {
+            animation: reveal-to-right 1s cubic-bezier(0.77, 0, 0.18, 1);
+          }
+          > * {
+            animation: opacity 1s linear forwards;
+          }
+          &.reveal-second {
+            &::after {
+              animation: reveal-to-right 1s $reveal-second-delay cubic-bezier(0.77, 0, 0.18, 1);
+            }
+          }
+          &.desc-wrap {
+            &::before {
+              animation-delay: $desc-delay;
+            }
+            .desc {
+              animation-delay: $desc-delay;
+            }
+            &.reveal-second {
+              &::after {
+                animation-delay: $desc-delay + $reveal-second-delay;
+              }
+            }
+          }
+          &.reveal-to-left {
+            &::before {
+              animation-name: reveal-to-left;
+            }
+            &.reveal-second {
+              &::after {
+                animation-name: reveal-to-left;
+              }
+            }
+          }
+          &.reveal-to-top {
+            &::before {
+              animation-name: reveal-to-top;
+            }
+            &.reveal-second {
+              &::after {
+                animation-name: reveal-to-top;
+              }
+            }
+          }
+          &.reveal-to-bottom {
+            &::before {
+              animation-name: reveal-to-bottom;
+            }
+            &.reveal-second {
+              &::after {
+                animation-name: reveal-to-bottom;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes opacity {
+  0% { opacity: 0; }
+  51% { opacity: 0; }
+  52% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes reveal-to-right {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  80% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+
+    /*
+      If use width: 0
+      When this animation going from 80% to 100% is running, which looks problem.
+
+      If use width: 100%
+      Solve above problem but require overflow hidden to prevent scroll-x.
+
+    */
+
+    width: 100%;
+  }
+}
+
+@keyframes reveal-to-left {
+  0% {
+    right: 0;
+    left: auto;
+    width: 0;
+  }
+  50% {
+    right: 0;
+    left: auto;
+    width: 100%;
+  }
+  80% {
+    right: 0;
+    left: auto;
+    width: 100%;
+  }
+  100% {
+    right: 100%;
+    left: auto;
+    width: 100%;
+  }
+}
+
+@keyframes reveal-to-bottom {
+  0% {
+    top: 0;
+    width: 100%;
+    height: 0;
+  }
+  50% {
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  80% {
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    top: 100%;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes reveal-to-top {
+  0% {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+  }
+  50% {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  80% {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    top: auto;
+    bottom: 100%;
+    width: 100%;
+    height: 100%;
+  }
+}

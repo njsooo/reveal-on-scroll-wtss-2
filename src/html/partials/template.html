@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example - {{ title }}</title>
+    <!-- Google Fonts -->
+    <include src="google_fonts.html"></include>
+  </head>
+  <body>
+    <div id="scroll-info">
+      <ul class="article-scroll-y-list">
+        <li>article1 scrollY : <span>0</span>px</li>
+        <li>article2 scrollY : <span>0</span>px</li>
+        <li>article3 scrollY : <span>0</span>px</li>
+        <li>article4 scrollY : <span>0</span>px</li>
+        <li>article5 scrollY : <span>0</span>px</li>
+        <li>article6 scrollY : <span>0</span>px</li>
+        <li>article7 scrollY : <span>0</span>px</li>
+        <li>article8 scrollY : <span>0</span>px</li>
+        <li>article9 scrollY : <span>0</span>px</li>
+      </ul>
+      <div class="current-scroll-y">current scrollY : <span>0</span>px</div>
+    </div>
+    <!-- // SCROLL INFO -->
+
+    <header id="header">
+      <h1>Reveal Animation {{ title }}</h1>
+      <nav>
+        <ul>
+          <li class="on"><a href="javascript:void(0);">01</a></li>
+          <li><a href="javascript:void(0);">02</a></li>
+          <li><a href="javascript:void(0);">03</a></li>
+          <li><a href="javascript:void(0);">04</a></li>
+          <li><a href="javascript:void(0);">05</a></li>
+          <li><a href="javascript:void(0);">06</a></li>
+          <li><a href="javascript:void(0);">07</a></li>
+          <li><a href="javascript:void(0);">08</a></li>
+          <li><a href="javascript:void(0);">09</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- // HEADER -->
+
+    <main id="main">
+      <div class="container">
+        <article>
+          <span class="num">01</span>
+          <h2 class="title">Article 1</h2>
+          <figure class="img-wrap reveal reveal-to-right">
+            <div class="img"></div>
+          </figure>
+          <div class="desc-wrap reveal reveal-to-right">
+            <p class="desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+          </div>
+        </article>
+        <!-- // ARTICLE 1 -->
+
+        <article>
+          <span class="num">02</span>
+          <h2 class="title">Article 2</h2>
+          <figure class="img-wrap reveal reveal-to-left">
+            <div class="img scale-20"></div>
+          </figure>
+          <div class="desc-wrap reveal reveal-to-left">
+            <p class="desc">결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
+          </div>
+        </article>
+        <!-- // ARTICLE 2 -->
+
+        <article>
+          <span class="num">03</span>
+          <h2 class="title">Article 3</h2>
+          <figure class="img-wrap reveal reveal-to-bottom">
+            <div class="img"></div>
+          </figure>
+          <div class="desc-wrap reveal reveal-to-bottom">
+            <p class="desc">매 순간에 최선을 다하고, 끊임없이 변화한다.</p>
+          </div>
+        </article>
+        <!-- // ARTICLE 3 -->
+
+        <article>
+          <span class="num">04</span>
+          <h2 class="title">Article 4</h2>
+          <figure class="img-wrap reveal reveal-to-top">
+            <div class="img"></div>
+          </figure>
+          <div class="desc-wrap reveal reveal-to-top">
+            <p class="desc">모든지 기본을 중요하게 생각한다.</p>
+          </div>
+        </article>
+        <!-- // ARTICLE 4 -->
+
+        <article>
+          <span class="num">05</span>
+          <h2 class="title">Article 5</h2>
+          <figure class="img-wrap reveal reveal-to-right reveal-second">
+            <div class="img"></div>
+          </figure>
+          <div class="desc-wrap reveal reveal-to-right reveal-second">
+            <p class="desc">열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.</p>
+          </div>
+        </article>
+        <!-- // ARTICLE 5 -->
+
+        <article>
+          <span class="num">06</span>
+          <h2 class="title">Article 6</h2>
+          <figure class="img-wrap reveal reveal-to-left reveal-second">
+            <div class="img"></div>
+          </figure>
+          <div class="desc-wrap reveal reveal-to-left reveal-second">
+            <p class="desc">천 마디 말보단 하나의 행동이 더 값지다.</p>
+          </div>
+        </article>
+        <!-- // ARTICLE 6 -->
+
+        <article>
+          <span class="num">07</span>
+          <h2 class="title">Article 7</h2>
+          <figure class="img-wrap reveal reveal-to-top reveal-second">
+            <div class="img"></div>
+          </figure>
+          <div class="desc-wrap reveal reveal-to-top reveal-second">
+            <p class="desc">조그만 성공에 만족하지 않으며, 방심을 경계한다.</p>
+          </div>
+        </article>
+        <!-- // ARTICLE 7 -->
+
+        <article>
+          <span class="num">08</span>
+          <h2 class="title">Article 8</h2>
+          <figure class="img-wrap reveal reveal-to-bottom reveal-second">
+            <div class="img"></div>
+          </figure>
+          <div class="desc-wrap reveal reveal-to-bottom reveal-second">
+            <p class="desc">나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다</p>
+          </div>
+        </article>
+        <!-- // ARTICLE 8 -->
+
+        <article>
+          <span class="num">09</span>
+          <h2 class="title">Article 9</h2>
+          <figure class="img-wrap reveal reveal-to-bottom reveal-second">
+            <div class="img"></div>
+          </figure>
+
+          <div class="desc-wrap reveal reveal-to-left reveal-second">
+            <p class="desc">꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.</p>
+          </div>
+        </article>
+        <!-- // ARTICLE 9 -->
+      </div>
+      <!-- // CONTAINER -->
+    </main>
+    <!-- // MAIN -->
+  </body>
+</html>

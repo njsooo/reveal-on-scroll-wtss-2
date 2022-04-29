@@ -1,0 +1,81 @@
+@mixin vertical-bar($width, $height, $margin-left-right, $bg-color) {
+  content: "";
+  display: inline-block;
+  width: $width;
+  height: $height;
+  margin: 0 $margin-left-right;
+  background-color: $bg-color;
+  @content;
+}
+
+@mixin icon-plus($width, $height, $color) {
+  position: absolute;
+  width: $width;
+  height: $width;
+  cursor: pointer;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: inherit;
+    height: $height;
+    background-color: $color;
+    transition: transform 0.3s;
+  }
+  &::after {
+    transform: rotate(90deg);
+  }
+  &.on {
+    &::after {
+      transform: rotate(0);
+    }
+  }
+  @content;
+}
+
+@mixin icon-arrow($width, $height, $border-width, $border-color, $bg-color, $rotate) {
+  content: "";
+  position: absolute;
+  width: $width;
+  height: $height;
+  border: $border-width solid $border-color;
+  border-top: none;
+  border-left: none;
+  background-color: $bg-color;
+  transform: rotate($rotate);
+  @content;
+}
+
+@mixin text-one-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin line-clamp($max-line) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+@mixin blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+@mixin br-inline {
+  content: " ";
+  display: inline;
+  &::after {
+    content: " ";
+    display: inline;
+  }
+}
