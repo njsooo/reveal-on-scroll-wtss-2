@@ -2,8 +2,8 @@
 
 ## Demo
 
-- [Demo - JS]()
-- [Demo - JQuery]()
+- [Demo - JS](https://candid-tiramisu-343a26.netlify.app/js.html)
+- [Demo - JQuery](https://candid-tiramisu-343a26.netlify.app/jquery.html)
 
 ## Reference
 
